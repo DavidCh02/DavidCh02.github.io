@@ -1,8 +1,9 @@
 # DavidCh02.github.io
 TeleRobot recolector de basura
-----------------------
+
 #### Iniciativa
 Este proyecto comenzó debido a una necesidad existente en nuestro campo de estudio, la acumulación de basura o afecta la estética y el ambiente del campus universitario también tiene implicaciones negativas para la salud pública y el medio ambiente. La necesidad de un sistema eficiente y semi automatizado para la recolección de residuos que es crucial para mantener un entorno limpio y sostenible.
+
 ----------------
 ## Capturas
 ![image](https://github.com/DavidCh02/Brazo-Robotico/assets/166523123/908a4441-c63d-4ca4-aa03-3c819c0bc512)
