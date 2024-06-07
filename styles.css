@@ -1,0 +1,191 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 18px; /* Tamaño de fuente base */
+    position: relative; /* Hacemos que el cuerpo sea el contenedor principal */
+    padding-bottom: 50px; /* Ajusta esto al tamaño del footer */
+}
+
+header {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header .control-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    color: #ff7e5f;
+    padding: 25px 45px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+header .control-button:hover {
+    background: #ff7e5f;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    background-color: #575757;
+}
+
+main {
+    padding: 40px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: rgb(164, 190, 250);
+    text-align: center;
+    padding: 5px 0;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.footer-left {
+    justify-content: flex-start;
+}
+
+.footer-right {
+    justify-content: flex-end;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.github-logo {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.github-logo:hover {
+    transform: scale(1.1);
+}
+
+.button {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+}
+
+.centered-text {
+    text-align: center;
+    font-family: 'Georgia', serif; /* Puedes cambiar 'Georgia' por cualquier fuente que prefieras */
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.image {
+    margin-top: 20px;
+}
+    /* Estilos adicionales */
+.two-columns {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px; /* Espacio entre el texto y la imagen */
+     }
+
+ .two-columns img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Para redondear las esquinas de la imagen */
+ }
+ #requerimientos {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#requerimientos h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#requerimientos ul {
+    list-style-type: none;
+}
+
+#requerimientos li {
+    margin-bottom: 10px;
+}
+
+#requerimientos li::before {
+    content: "\2022";
+    color: #ff7e5f;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}

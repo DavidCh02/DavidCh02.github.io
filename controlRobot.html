@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control del Brazo Robótico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex flex-col bg-gradient-to-r from-white to-orange-200 dark:from-zinc-900 dark:to-orange-900 text-zinc-800 dark:text-zinc-200">
+<header class="bg-gradient-to-r from-white to-orange-500 dark:from-orange-700 dark:to-orange-800 p-4 rounded-b-lg shadow-md">
+    <div class="flex justify-between items-center">
+        <h1 class="text-2xl">Control del Brazo Robótico 🤖</h1>
+        <div class="flex gap-2">
+            <button id="connect-bluetooth" class="bg-white text-orange-500 dark:bg-orange-700 dark:text-white p-2 rounded-lg">Conectar Bluetooth</button>
+            <button id="connect-wifi" class="bg-white text-orange-500 dark:bg-orange-700 dark:text-white p-2 rounded-lg">Conectar WiFi</button>
+        </div>
+    </div>
+</header>
+<main class="flex flex-col md:flex-row gap-4 p-4">
+    <section class="flex-1 bg-white dark:bg-zinc-800 p-4 rounded-lg shadow-md">
+        <h2 class="text-xl mb-4">Controles</h2>
+        <div class="grid grid-cols-2 gap-4">
+            <button class="bg-orange-500 text-white p-4 rounded-lg">Mover Arriba</button>
+            <button class="bg-orange-500 text-white p-4 rounded-lg">Mover Abajo</button>
+            <button class="bg-orange-500 text-white p-4 rounded-lg">Mover Izquierda</button>
+            <button class="bg-orange-500 text-white p-4 rounded-lg">Mover Derecha</button>
+            <button class="bg-orange-500 text-white p-4 rounded-lg">Abrir Pinza</button>
+            <button class="bg-orange-500 text-white p-4 rounded-lg">Cerrar Pinza</button>
+            <hr>
+        </div>
+        <a href="index.html" class="bg-orange-500 text-white p-4 rounded-lg">Inicio</a>
+    </section>
+    <section class="flex-1 bg-white dark:bg-zinc-800 p-4 rounded-lg shadow-md">
+        <h2 class="text-xl mb-4">Vista de la Cámara</h2>
+        <img src="https://placehold.co/600x400" alt="Vista de la cámara" class="w-full rounded-lg shadow-md" crossorigin="anonymous">
+    </section>
+</main>
+
+<script>
+  document.getElementById('connect-bluetooth').addEventListener('click', async () => {
+    try {
+      const device = await navigator.bluetooth.requestDevice({
+        acceptAllDevices: true,
+        optionalServices: ['battery_service']
+      });
+      console.log('Conectado a', device.name);
+    } catch (error) {
+      console.error('Error al conectar:', error);
+    }
+  });
+
+  document.getElementById('connect-wifi').addEventListener('click', async () => {
+    try {
+      // Assuming a function connectToWiFi exists for WiFi connection
+      const result = await connectToWiFi();
+      console.log('Conectado a WiFi:', result);
+    } catch (error) {
+      console.error('Error al conectar a WiFi:', error);
+    }
+  });
+
+  async function connectToWiFi() {
+    // Placeholder for WiFi connection logic
+    return Promise.resolve('WiFi Network');
+  }
+</script>
+
+</body>
+</html>

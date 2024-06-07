@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brazo Robotico</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+    <header>
+        <h1>Caso de Uso</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Identificación del Caso de Uso</h2>
+            <ul>
+                <li><strong>Nombre:</strong> Recolección de Residuos con Brazo Robótico</li>
+                <li><strong>Actor Principal:</strong> Usuario (operador)</li>
+                <li><strong>Objetivo:</strong> Permitir al usuario controlar remotamente un brazo robótico para recoger, pesar y clasificar residuos en el campus universitario.</li>
+                <li><strong>Precondiciones:</strong> El sistema está encendido, el brazo robótico está en estado inicial y todos los módulos (ESP32-CAM, sensores, Bluetooth) están funcionando correctamente.</li>
+                <li><strong>Postcondiciones:</strong> Los residuos han sido recolectados, pesados y registrados correctamente.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Flujo Principal de Eventos (Camino Feliz)</h2>
+            <ol>
+                <li><strong>Inicio del Sistema:</strong> El usuario enciende el brazo robótico y verifica que todos los módulos están operativos.</li>
+                <li><strong>Conexión Remota:</strong> El usuario se conecta al brazo robótico a través de una interfaz de control remoto utilizando Bluetooth.</li>
+                <li><strong>Visualización en Tiempo Real:</strong> La cámara ESP32-CAM transmite video en tiempo real a la interfaz del usuario, permitiendo ver el área de recolección.</li>
+                <li><strong>Control del Brazo Robótico:</strong> El usuario utiliza los controles de la interfaz para mover el brazo robótico hacia el residuo identificado en la transmisión de video.</li>
+                <li><strong>Recolección del Objeto:</strong> El brazo robótico se posiciona sobre el residuo y utiliza su garra para recogerlo.</li>
+                <li><strong>Medición del Peso:</strong>
+                    <ul>
+                        <li>Una vez recogido, el objeto es llevado a un sensor de peso (integrado en el brazo) para medir su masa.</li>
+                        <li>El peso del objeto se muestra en la interfaz del usuario.</li>
+                    </ul>
+                </li>
+                <li><strong>Clasificación del Residuo:</strong> Basado en el peso y tipo del residuo (determinado visualmente por el usuario), el residuo es depositado en el contenedor adecuado.</li>
+                <li><strong>Registro de Datos:</strong> El sistema registra la acción, incluyendo el tipo y peso del residuo recolectado.</li>
+                <li><strong>Repetición del Proceso:</strong> El usuario repite el proceso para recoger más residuos hasta completar la tarea.</li>
+                <li><strong>Desconexión y Apagado:</strong> El usuario desconecta el control remoto y apaga el sistema.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Flujos Alternativos</h2>
+            <ul>
+                <li><strong>A1: Fallo en la Conexión Remota</strong>
+                    <ul>
+                        <li><strong>Condición:</strong> Si la conexión Bluetooth falla.</li>
+                        <li><strong>Acción:</strong> El sistema intentará reconectar automáticamente. Si no es posible, se notificará al usuario para intentar manualmente o revisar el módulo Bluetooth.</li>
+                    </ul>
+                </li>
+                <li><strong>A2: Objeto No Detectado</strong>
+                    <ul>
+                        <li><strong>Condición:</strong> Si el objeto no es visible claramente en la transmisión de video.</li>
+                        <li><strong>Acción:</strong> El usuario puede ajustar la posición de la cámara o iluminación para mejorar la visibilidad antes de intentar recoger el objeto nuevamente.</li>
+                    </ul>
+                </li>
+                <li><strong>A3: Error en la Medición del Peso</strong>
+                    <ul>
+                        <li><strong>Condición:</strong> Si el sensor de peso no puede medir correctamente.</li>
+                        <li><strong>Acción:</strong> El sistema notificará al usuario y pedirá que el objeto sea recolocado en el sensor o que se realice una calibración rápida del sensor de peso.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Requisitos de Sistema</h2>
+            <ul>
+                <li><strong>Hardware:</strong>
+                    <ul>
+                        <li>Brazo robótico con múltiples grados de libertad.</li>
+                        <li>ESP32-CAM para transmisión de video.</li>
+                        <li>Sensor de peso (por ejemplo, HX711).</li>
+                        <li>Módulo Bluetooth para control remoto.</li>
+                    </ul>
+                </li>
+                <li><strong>Software:</strong>
+                    <ul>
+                        <li>Interfaz de control remoto para el usuario (puede ser una aplicación móvil o de escritorio).</li>
+                        <li>Algoritmos para control del brazo, procesamiento de señales de video, y medición del peso.</li>
+                        <li>Sistema de registro de datos para almacenar información sobre residuos recolectados.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Descripción de Interfaces</h2>
+            <ul>
+                <li><strong>Interfaz de Usuario:</strong>
+                    <ul>
+                        <li>Pantalla que muestra la transmisión de video en tiempo real.</li>
+                        <li>Controles para mover el brazo robótico (botones virtuales).</li>
+                        <li>Interfaz para mostrar el peso del objeto y la tabla de registro.</li>
+                        <li>Indicadores de estado del sistema y notificaciones de errores.</li>
+                    </ul>
+                </li>
+                <li><strong>Interfaz de Hardware:</strong>
+                    <ul>
+                        <li>Conexiones entre el ESP32-CAM, el sensor de peso, y el módulo Bluetooth con el brazo robótico.</li>
+                        <li>Fuente de alimentación adecuada para todos los componentes.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <a class="back-button" href="index.html">Regresar a la Página Principal</a>
+    </main>
+</body>
+</html>
