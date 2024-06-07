@@ -8,6 +8,7 @@
         }
         header {
             background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            background: url('https://png.pngtree.com/background/20231101/original/pngtree-dark-technological-backdrop-with-glowing-triangles-at-center-for-hud-landing-picture-image_5838460.jpg') no-repeat center center/cover;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -25,7 +26,7 @@
             
         }
         section:hover {
-            background: linear-gradient(135deg, #ffcdc0, #feb47b); /* Cambio de color de fondo al pasar el mouse por encima */
+            background: linear-gradient(135deg, #ffe3dc, #feb47b); /* Cambio de color de fondo al pasar el mouse por encima */
         }
         h2 {
             color: #e64a19;

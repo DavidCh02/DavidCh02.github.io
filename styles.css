@@ -1,11 +1,11 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Didot ,serif;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
-    font-size: 18px; /* Tamaño de fuente base */
+    font-size: 25px; /* Tamaño de fuente base */
     position: relative; /* Hacemos que el cuerpo sea el contenedor principal */
     padding-bottom: 50px; /* Ajusta esto al tamaño del footer */
 }
@@ -16,6 +16,8 @@ header {
     padding: 20px 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: url('https://png.pngtree.com/background/20231101/original/pngtree-dark-technological-backdrop-with-glowing-triangles-at-center-for-hud-landing-picture-image_5838460.jpg') no-repeat center center/cover;
+    opacity: 1; /* Valor de opacidad entre 0 (totalmente transparente) y 1 (totalmente opaco) */
 }
 
 header .control-button {
@@ -70,22 +72,23 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #333;
-    color: rgb(164, 190, 250);
+    color: rgb(247, 249, 255);
     text-align: center;
-    padding: 5px 0;
+    padding: 50px 20;
+    background: url('https://png.pngtree.com/background/20231101/original/pngtree-dark-technological-backdrop-with-glowing-triangles-at-center-for-hud-landing-picture-image_5838460.jpg') no-repeat center center/cover;
+    opacity: 1;
 }
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 500px;
+    margin: auto auto;
+    padding: 0 10px;
 }
 
 .footer-left, .footer-right {
-    flex: 1;
+    flex: 6;
     display: flex;
     align-items: center;
 }
